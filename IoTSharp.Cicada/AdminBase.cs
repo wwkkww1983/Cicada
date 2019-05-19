@@ -42,7 +42,7 @@ namespace IoTSharp.Cicada
             }
         }
 
-        public T FocusedRow => gridView.GetFocusedRow() as T;
+        public T FocusedRow => gridView?.GetFocusedRow() as T;
 
         private void GridControl_Load(object sender, EventArgs e) => DoRefresh();
 

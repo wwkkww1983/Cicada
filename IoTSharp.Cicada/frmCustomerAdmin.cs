@@ -87,6 +87,10 @@ namespace IoTSharp.Cicada
 
         private void btnUserAdmin_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var frm = this.MdiParent.ShowMdiChildren<frmUserAdmin>(f => {
+                f.Customer = FocusedRow;
+                f.Text = $"用户管理- {f.Customer.Name}";
+            });
         }
     }
 }

@@ -63,6 +63,7 @@ namespace IoTSharp.Cicada
             {
                 var cust = IoTSharp.Sdk.SdkClient.Create<IoTSharp.Sdk.DevicesClient>();
                 opt.Customer = IoTSharp.Sdk.SdkClient.MyInfo.Customer;
+                opt.Text = $"设备管理-{opt.Customer.Name}";
             });
         }
     }
