@@ -100,6 +100,8 @@
             this.colValue_Json1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue_DataTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcDateTimeValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -544,7 +546,8 @@
             this.colValue_Double,
             this.colValue_Json,
             this.colValue_XML,
-            this.colValue_Binary});
+            this.colValue_Binary,
+            this.gcDateTimeValue2});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
             // 
@@ -707,6 +710,7 @@
             this.colValue_String1,
             this.colValue_Long1,
             this.colValue_Double1,
+            this.colValue_DataTime,
             this.colValue_Json1,
             this.colValue_XML1,
             this.colValue_Binary1});
@@ -833,6 +837,28 @@
             this.colValue_Binary1.VisibleIndex = 11;
             this.colValue_Binary1.Width = 94;
             // 
+            // colValue_DataTime
+            // 
+            this.colValue_DataTime.Caption = "时间值";
+            this.colValue_DataTime.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.colValue_DataTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colValue_DataTime.FieldName = "Value_DateTime";
+            this.colValue_DataTime.MinWidth = 25;
+            this.colValue_DataTime.Name = "colValue_DataTime";
+            this.colValue_DataTime.Visible = true;
+            this.colValue_DataTime.VisibleIndex = 12;
+            this.colValue_DataTime.Width = 94;
+            // 
+            // gcDateTimeValue2
+            // 
+            this.gcDateTimeValue2.Caption = "时间属性值";
+            this.gcDateTimeValue2.FieldName = "Value_DateTime";
+            this.gcDateTimeValue2.MinWidth = 25;
+            this.gcDateTimeValue2.Name = "gcDateTimeValue2";
+            this.gcDateTimeValue2.Visible = true;
+            this.gcDateTimeValue2.VisibleIndex = 12;
+            this.gcDateTimeValue2.Width = 94;
+            // 
             // frmDevices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -950,5 +976,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private System.Windows.Forms.BindingSource enumKeyValueBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue_DataTime;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDateTimeValue2;
     }
 }
