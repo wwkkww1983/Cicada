@@ -85,6 +85,7 @@
             this.colValue_Json = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcDateTimeValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.telemetryLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -97,11 +98,10 @@
             this.colValue_String1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Long1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Double1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue_DataTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Json1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_DataTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcDateTimeValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -176,7 +176,6 @@
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowEdit = false;
             this.colId.OptionsColumn.ReadOnly = true;
-            this.colId.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             this.colId.Width = 94;
@@ -187,6 +186,7 @@
             this.colName.FieldName = "Name";
             this.colName.MinWidth = 25;
             this.colName.Name = "colName";
+            this.colName.OptionsEditForm.StartNewRow = true;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
             this.colName.Width = 94;
@@ -198,9 +198,7 @@
             this.colType.FieldName = "DeviceType";
             this.colType.MinWidth = 25;
             this.colType.Name = "colType";
-            this.colType.OptionsColumn.AllowEdit = false;
-            this.colType.OptionsColumn.ReadOnly = true;
-            this.colType.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
+            this.colType.OptionsEditForm.StartNewRow = true;
             this.colType.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colType.Visible = true;
             this.colType.VisibleIndex = 2;
@@ -681,6 +679,16 @@
             this.colValue_Binary.VisibleIndex = 11;
             this.colValue_Binary.Width = 94;
             // 
+            // gcDateTimeValue2
+            // 
+            this.gcDateTimeValue2.Caption = "时间属性值";
+            this.gcDateTimeValue2.FieldName = "Value_DateTime";
+            this.gcDateTimeValue2.MinWidth = 25;
+            this.gcDateTimeValue2.Name = "gcDateTimeValue2";
+            this.gcDateTimeValue2.Visible = true;
+            this.gcDateTimeValue2.VisibleIndex = 12;
+            this.gcDateTimeValue2.Width = 94;
+            // 
             // gridControl2
             // 
             this.gridControl2.DataSource = this.telemetryLatestBindingSource;
@@ -807,6 +815,18 @@
             this.colValue_Double1.VisibleIndex = 8;
             this.colValue_Double1.Width = 94;
             // 
+            // colValue_DataTime
+            // 
+            this.colValue_DataTime.Caption = "时间值";
+            this.colValue_DataTime.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.colValue_DataTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colValue_DataTime.FieldName = "Value_DateTime";
+            this.colValue_DataTime.MinWidth = 25;
+            this.colValue_DataTime.Name = "colValue_DataTime";
+            this.colValue_DataTime.Visible = true;
+            this.colValue_DataTime.VisibleIndex = 12;
+            this.colValue_DataTime.Width = 94;
+            // 
             // colValue_Json1
             // 
             this.colValue_Json1.Caption = "Json值";
@@ -836,28 +856,6 @@
             this.colValue_Binary1.Visible = true;
             this.colValue_Binary1.VisibleIndex = 11;
             this.colValue_Binary1.Width = 94;
-            // 
-            // colValue_DataTime
-            // 
-            this.colValue_DataTime.Caption = "时间值";
-            this.colValue_DataTime.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
-            this.colValue_DataTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colValue_DataTime.FieldName = "Value_DateTime";
-            this.colValue_DataTime.MinWidth = 25;
-            this.colValue_DataTime.Name = "colValue_DataTime";
-            this.colValue_DataTime.Visible = true;
-            this.colValue_DataTime.VisibleIndex = 12;
-            this.colValue_DataTime.Width = 94;
-            // 
-            // gcDateTimeValue2
-            // 
-            this.gcDateTimeValue2.Caption = "时间属性值";
-            this.gcDateTimeValue2.FieldName = "Value_DateTime";
-            this.gcDateTimeValue2.MinWidth = 25;
-            this.gcDateTimeValue2.Name = "gcDateTimeValue2";
-            this.gcDateTimeValue2.Visible = true;
-            this.gcDateTimeValue2.VisibleIndex = 12;
-            this.gcDateTimeValue2.Width = 94;
             // 
             // frmDevices
             // 

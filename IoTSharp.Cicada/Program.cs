@@ -23,7 +23,7 @@ namespace IoTSharp.Cicada
 #if DEBUG
             SdkClient.BaseURL = Properties.Settings.Default.ApiUrl;
 #else
-            SdkClient.BaseURL = "http://39.98.211.23:5050";
+            SdkClient.BaseURL = "http://www.iotsharp.net";
 #endif
             Application.Run(new frmMain());
         }

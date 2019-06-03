@@ -31,31 +31,31 @@
             this.components = new System.ComponentModel.Container();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.EmailTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.registerDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PasswordTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CustomerNameGridLookUpEdit = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.PhoneNumberTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ItemForCustomerName = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForEmail = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForPassword = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForPhoneNumber = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.PhoneNumberTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.ItemForPhoneNumber = new DevExpress.XtraLayout.LayoutControlItem();
+            this.registerDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registerDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerNameGridLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCustomerName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registerDtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -84,10 +84,6 @@
             this.EmailTextEdit.StyleController = this.dataLayoutControl1;
             this.EmailTextEdit.TabIndex = 4;
             // 
-            // registerDtoBindingSource
-            // 
-            this.registerDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.RegisterDto);
-            // 
             // PasswordTextEdit
             // 
             this.PasswordTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.registerDtoBindingSource, "Password", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -107,6 +103,16 @@
             this.CustomerNameGridLookUpEdit.Size = new System.Drawing.Size(341, 24);
             this.CustomerNameGridLookUpEdit.StyleController = this.dataLayoutControl1;
             this.CustomerNameGridLookUpEdit.TabIndex = 5;
+            // 
+            // PhoneNumberTextEdit
+            // 
+            this.PhoneNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.registerDtoBindingSource, "PhoneNumber", true));
+            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(112, 68);
+            this.PhoneNumberTextEdit.Name = "PhoneNumberTextEdit";
+            this.PhoneNumberTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(385, 24);
+            this.PhoneNumberTextEdit.StyleController = this.dataLayoutControl1;
+            this.PhoneNumberTextEdit.TabIndex = 7;
             // 
             // ItemForCustomerName
             // 
@@ -157,6 +163,15 @@
             this.ItemForPassword.Text = "Password";
             this.ItemForPassword.TextSize = new System.Drawing.Size(97, 18);
             // 
+            // ItemForPhoneNumber
+            // 
+            this.ItemForPhoneNumber.Control = this.PhoneNumberTextEdit;
+            this.ItemForPhoneNumber.Location = new System.Drawing.Point(0, 56);
+            this.ItemForPhoneNumber.Name = "ItemForPhoneNumber";
+            this.ItemForPhoneNumber.Size = new System.Drawing.Size(489, 103);
+            this.ItemForPhoneNumber.Text = "Phone Number";
+            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(97, 18);
+            // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(121, 226);
@@ -176,24 +191,9 @@
             this.btnCancel.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // PhoneNumberTextEdit
+            // registerDtoBindingSource
             // 
-            this.PhoneNumberTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.registerDtoBindingSource, "PhoneNumber", true));
-            this.PhoneNumberTextEdit.Location = new System.Drawing.Point(112, 68);
-            this.PhoneNumberTextEdit.Name = "PhoneNumberTextEdit";
-            this.PhoneNumberTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.PhoneNumberTextEdit.Size = new System.Drawing.Size(385, 24);
-            this.PhoneNumberTextEdit.StyleController = this.dataLayoutControl1;
-            this.PhoneNumberTextEdit.TabIndex = 7;
-            // 
-            // ItemForPhoneNumber
-            // 
-            this.ItemForPhoneNumber.Control = this.PhoneNumberTextEdit;
-            this.ItemForPhoneNumber.Location = new System.Drawing.Point(0, 56);
-            this.ItemForPhoneNumber.Name = "ItemForPhoneNumber";
-            this.ItemForPhoneNumber.Size = new System.Drawing.Size(489, 103);
-            this.ItemForPhoneNumber.Text = "Phone Number";
-            this.ItemForPhoneNumber.TextSize = new System.Drawing.Size(97, 18);
+            this.registerDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.RegisterDto);
             // 
             // frmCreateUser
             // 
@@ -211,16 +211,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registerDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerNameGridLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCustomerName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhoneNumberTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForPhoneNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registerDtoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

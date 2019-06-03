@@ -54,8 +54,7 @@ namespace IoTSharp.Cicada
 
         public override Task<Device> Post(Device obj, CancellationToken token)
         {
-            obj.Customer = Customer;
-            return Client.PostDeviceAsync(obj, token);
+            return Client.PostDeviceAsync( new DevicePostDto() {  DeviceType=obj.DeviceType, Name=obj.Name} , token);
         }
 
         public override Task<ICollection<Device>> GetAllAsync(CancellationToken token)
