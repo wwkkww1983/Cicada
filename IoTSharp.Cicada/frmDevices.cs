@@ -54,7 +54,7 @@ namespace IoTSharp.Cicada
 
         public override Task<Device> Post(Device obj, CancellationToken token)
         {
-            return Client.PostDeviceAsync( new DevicePostDto() {  DeviceType=obj.DeviceType, Name=obj.Name} , token);
+            return Client.PostDeviceAsync( new Device() {  DeviceType=obj.DeviceType, Name=obj.Name} , token);
         }
 
         public override Task<ICollection<Device>> GetAllAsync(CancellationToken token)
@@ -125,19 +125,30 @@ namespace IoTSharp.Cicada
         {
             try
             {
-                var row = FocusedRow;
+                Device row = null;
+                this.Invoke((MethodInvoker)delegate
+              {
+                  row = FocusedRow;
+              });
+
                 if (row != null)
                 {
                     var dev = SdkClient.Create<DevicesClient>();
                     var al = await dev.GetAttributeLatestAsync(row.Id);
                     var tl = await dev.GetTelemetryLatestAsync(row.Id);
-                    attributeLatestBindingSource.DataSource = al;
-                    telemetryLatestBindingSource.DataSource = tl;
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        attributeLatestBindingSource.DataSource = al;
+                        telemetryLatestBindingSource.DataSource = tl;
+                    });
                 }
             }
             catch (Exception ex)
             {
-                lblInfo.Caption = ex.Message;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblInfo.Caption = ex.Message;
+                });
             }
         }
 
@@ -151,6 +162,14 @@ namespace IoTSharp.Cicada
             dis.Add("Doublevalue", 2332.322);
             await dev.TelemetryAsync(txtToken.EditValue.ToString(), dis);
             await ReloadLatest();
+        }
+        DateTime lastdate = DateTime.MinValue;
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (DateTime.Now.Subtract(lastdate).TotalSeconds>5)
+            {
+                Task.Run(async () => await ReloadLatest());
+            }
         }
     }
 }

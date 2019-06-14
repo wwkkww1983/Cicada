@@ -102,6 +102,7 @@
             this.colValue_Json1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -768,6 +769,8 @@
             // colDateTime1
             // 
             this.colDateTime1.Caption = "上传时间";
+            this.colDateTime1.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.colDateTime1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colDateTime1.FieldName = "DateTime";
             this.colDateTime1.MinWidth = 25;
             this.colDateTime1.Name = "colDateTime1";
@@ -856,6 +859,11 @@
             this.colValue_Binary1.Visible = true;
             this.colValue_Binary1.VisibleIndex = 11;
             this.colValue_Binary1.Width = 94;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // frmDevices
             // 
@@ -976,5 +984,6 @@
         private System.Windows.Forms.BindingSource enumKeyValueBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_DataTime;
         private DevExpress.XtraGrid.Columns.GridColumn gcDateTimeValue2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
