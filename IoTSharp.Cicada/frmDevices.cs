@@ -129,6 +129,26 @@ namespace IoTSharp.Cicada
                 this.Invoke((MethodInvoker)delegate
               {
                   row = FocusedRow;
+                  if (row != null)
+                  {
+                      rpgModBus.Enabled = row.DeviceType == DeviceType.Gateway;
+                      if (row.DeviceType == DeviceType.Gateway)
+                      {
+                          if (modBusConfigBindingSource.Count==0)
+                          {
+                              modBusConfigBindingSource.Add( new ModBusConfig()
+                              {
+                                  Address = "100",
+                                  KeyNameOrPrefix = "ModBus",
+                                  ModBusUri = new Uri("modbus://127.0.0.1:502/1"),
+                                  Lenght = 1,
+                                  ValueType = "String",
+                                  DataType = "Telemetry"
+                              });
+                          }
+                      }
+                  }
+                  
               });
 
                 if (row != null)
@@ -170,6 +190,47 @@ namespace IoTSharp.Cicada
             {
                 Task.Run(async () => await ReloadLatest());
             }
+        }
+
+        private void BtnModBus_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private async void  BtnConfigBus_ItemClickAsync(object sender, ItemClickEventArgs e)
+        {
+            var mc = modBusConfigBindingSource.Current as ModBusConfig;
+
+            var dev = SdkClient.Create<DevicesClient>();
+            var dis = new Dictionary<string, object>();
+            dis.Add("ModBusConfig", mc);
+            await dev.Attributes2Async(txtToken.EditValue.ToString(), dis);
+            await ReloadLatest();
+
+
+        }
+
+        private void BtnReadModBus_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var al = attributeLatestBindingSource.Current as AttributeLatest;
+            if (al != null)
+            {
+                var mconfig = Newtonsoft.Json.JsonConvert.DeserializeObject<ModBusConfig>(al.Value_Json);
+                if (mconfig!=null)
+                {
+                    modBusConfigBindingSource.DataSource = mconfig;
+                }
+            }
+        }
+
+        private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BarButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

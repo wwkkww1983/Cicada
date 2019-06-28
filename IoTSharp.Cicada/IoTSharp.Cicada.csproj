@@ -129,6 +129,12 @@
     <Compile Include="frmCreateUser.Designer.cs">
       <DependentUpon>frmCreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDevData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevData.Designer.cs">
+      <DependentUpon>frmDevData.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDevices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModBusConfig.cs" />
     <Compile Include="Models\EnumKeyValue.cs" />
     <Compile Include="PrimaryScreen.cs" />
     <Compile Include="Program.cs" />
@@ -183,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateUser.resx">
       <DependentUpon>frmCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevData.resx">
+      <DependentUpon>frmDevData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDevices.resx">
       <DependentUpon>frmDevices.cs</DependentUpon>
@@ -236,6 +246,7 @@
     <None Include="Properties\DataSources\IoT.Sharp.Sdk.CSharp.TelemetryLatest.datasource" />
     <None Include="Properties\DataSources\IoT.Sharp.Sdk.CSharp.Tenant.datasource" />
     <None Include="Properties\DataSources\IoTSharp.Cicada.Models.EnumKeyValue.datasource" />
+    <None Include="Properties\DataSources\IoTSharp.Cicada.Models.ModBusConfig.datasource" />
     <None Include="Properties\DataSources\IoTSharp.Sdk.CSharp.Session.datasource" />
     <None Include="Properties\DataSources\IoTSharp.Sdk.UserItemDto.datasource" />
     <None Include="Properties\Settings.settings">
@@ -327,6 +338,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\newemployee.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chartyaxissettings_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chartyaxissettings_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openhighlowclosecandlestick2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openhighlowclosecandlestick2_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -141,6 +141,26 @@ namespace IoTSharp.Cicada.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap chartyaxissettings_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("chartyaxissettings_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap chartyaxissettings_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("chartyaxissettings_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 DevExpress.Utils.Svg.SvgImage 类型的本地化资源。
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage close {
@@ -246,6 +266,26 @@ namespace IoTSharp.Cicada.Properties {
         internal static System.Drawing.Bitmap off {
             get {
                 object obj = ResourceManager.GetObject("off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap openhighlowclosecandlestick2_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("openhighlowclosecandlestick2_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap openhighlowclosecandlestick2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("openhighlowclosecandlestick2_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,9 @@
-﻿namespace IoTSharp.Cicada
+﻿using System;
+using DevExpress.XtraBars;
+
+namespace IoTSharp.Cicada
 {
-    partial class frmDevices
+    partial class frmDevData
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +32,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.deviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.enumKeyValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -55,41 +51,17 @@
             this.txtToken = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.lblInfo = new DevExpress.XtraBars.BarStaticItem();
-            this.btnModBus = new DevExpress.XtraBars.BarButtonItem();
-            this.txtModBusUri = new DevExpress.XtraBars.BarEditItem();
-            this.modBusConfigBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.txtAddress = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.cbxValueType = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.btnConfigBus = new DevExpress.XtraBars.BarButtonItem();
-            this.txtExtModbus = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.cbxDataType = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox4 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.btnReadModBus = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rpgModBus = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.repositoryItemPopupGalleryEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupGalleryEdit();
-            this.repositoryItemPopupGalleryEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupGalleryEdit();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.attributeLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.telemetryLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.attributeLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKeyName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,7 +78,6 @@
             this.colValue_Binary = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDateTimeValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.telemetryLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKeyName1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -121,138 +92,26 @@
             this.colValue_Json1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enumKeyValueBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modBusConfigBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupGalleryEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupGalleryEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl
-            // 
-            this.gridControl.DataSource = this.deviceBindingSource;
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl.Location = new System.Drawing.Point(0, 183);
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl.MenuManager = this.ribbonControl;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemPopupGalleryEdit1,
-            this.repositoryItemPopupGalleryEdit2,
-            this.repositoryItemGridLookUpEdit1,
-            this.repositoryItemComboBox1,
-            this.repositoryItemComboBox2});
-            this.gridControl.Size = new System.Drawing.Size(1060, 609);
-            this.gridControl.TabIndex = 2;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // deviceBindingSource
-            // 
-            this.deviceBindingSource.DataSource = typeof(IoTSharp.Sdk.Device);
-            this.deviceBindingSource.CurrentChanged += new System.EventHandler(this.deviceBindingSource_CurrentChangedAsync);
-            // 
-            // gridView1
-            // 
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colName,
-            this.colType});
-            this.gridView1.DetailHeight = 485;
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.Caption = "设备标识";
-            this.colId.FieldName = "Id";
-            this.colId.MinWidth = 25;
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
-            this.colId.OptionsColumn.ReadOnly = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            this.colId.Width = 94;
-            // 
-            // colName
-            // 
-            this.colName.Caption = "名称";
-            this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
-            this.colName.Name = "colName";
-            this.colName.OptionsEditForm.StartNewRow = true;
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 94;
-            // 
-            // colType
-            // 
-            this.colType.Caption = "类型";
-            this.colType.ColumnEdit = this.repositoryItemGridLookUpEdit1;
-            this.colType.FieldName = "DeviceType";
-            this.colType.MinWidth = 25;
-            this.colType.Name = "colType";
-            this.colType.OptionsEditForm.StartNewRow = true;
-            this.colType.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.colType.Visible = true;
-            this.colType.VisibleIndex = 2;
-            this.colType.Width = 94;
-            // 
-            // repositoryItemGridLookUpEdit1
-            // 
-            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit1.DataSource = this.enumKeyValueBindingSource;
-            this.repositoryItemGridLookUpEdit1.DisplayMember = "EnumName";
-            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
-            this.repositoryItemGridLookUpEdit1.PopupView = this.repositoryItemGridLookUpEdit1View;
-            this.repositoryItemGridLookUpEdit1.ValueMember = "EnumValue";
             // 
             // enumKeyValueBindingSource
             // 
             this.enumKeyValueBindingSource.DataSource = typeof(IoTSharp.Cicada.Models.EnumKeyValue);
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // ribbonControl
             // 
@@ -273,36 +132,19 @@
             this.barButtonItem4,
             this.btnGetToken,
             this.txtToken,
-            this.lblInfo,
-            this.btnModBus,
-            this.txtModBusUri,
-            this.barEditItem1,
-            this.txtAddress,
-            this.barEditItem2,
-            this.cbxValueType,
-            this.btnConfigBus,
-            this.txtExtModbus,
-            this.cbxDataType,
-            this.btnReadModBus});
+            this.lblInfo});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl.MaxItemId = 41;
+            this.ribbonControl.MaxItemId = 31;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
-            this.repositoryItemTextEdit2,
-            this.repositoryItemSpinEdit1,
-            this.repositoryItemSpinEdit2,
-            this.repositoryItemTextEdit3,
-            this.repositoryItemSpinEdit3,
-            this.repositoryItemComboBox3,
-            this.repositoryItemTextEdit4,
-            this.repositoryItemComboBox4});
+            this.repositoryItemTextEdit2});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1498, 183);
+            this.ribbonControl.Size = new System.Drawing.Size(1308, 183);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -312,7 +154,6 @@
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -326,7 +167,6 @@
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
-            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
             // bbiEdit
             // 
@@ -334,7 +174,6 @@
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
-            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
             // bbiDelete
             // 
@@ -342,7 +181,6 @@
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
-            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiRefresh
             // 
@@ -350,35 +188,30 @@
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // btnAttTest
             // 
             this.btnAttTest.Caption = "Http属性数据测试";
             this.btnAttTest.Id = 21;
             this.btnAttTest.Name = "btnAttTest";
-            this.btnAttTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAttTest_ItemClick);
             // 
             // btnTTest
             // 
             this.btnTTest.Caption = "Http遥测数据测试";
             this.btnTTest.Id = 22;
             this.btnTTest.Name = "btnTTest";
-            this.btnTTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTTest_ItemClickAsync);
             // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "MQTT属性数据测试";
             this.barButtonItem1.Id = 23;
             this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "MQTT遥测数据测试";
             this.barButtonItem2.Id = 24;
             this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -418,157 +251,11 @@
             this.lblInfo.Id = 30;
             this.lblInfo.Name = "lblInfo";
             // 
-            // btnModBus
-            // 
-            this.btnModBus.Caption = "ModBus 配置";
-            this.btnModBus.Id = 31;
-            this.btnModBus.Name = "btnModBus";
-            this.btnModBus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModBus_ItemClick);
-            // 
-            // txtModBusUri
-            // 
-            this.txtModBusUri.Caption = "URI:";
-            this.txtModBusUri.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "ModBusUri", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtModBusUri.Edit = this.repositoryItemTextEdit1;
-            this.txtModBusUri.EditValue = "modbus://127.0.0.1:502/1";
-            this.txtModBusUri.EditWidth = 150;
-            this.txtModBusUri.Id = 32;
-            this.txtModBusUri.Name = "txtModBusUri";
-            // 
-            // modBusConfigBindingSource
-            // 
-            this.modBusConfigBindingSource.DataSource = typeof(IoTSharp.Cicada.Models.ModBusConfig);
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Caption = "Add:";
-            this.barEditItem1.Edit = this.repositoryItemSpinEdit2;
-            this.barEditItem1.Id = 33;
-            this.barEditItem1.Name = "barEditItem1";
-            // 
-            // repositoryItemSpinEdit2
-            // 
-            this.repositoryItemSpinEdit2.AutoHeight = false;
-            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Caption = "ModBus地址:";
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("AccessibleDescription", this.modBusConfigBindingSource, "Address", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtAddress.Edit = this.repositoryItemTextEdit3;
-            this.txtAddress.EditValue = "100";
-            this.txtAddress.EditWidth = 63;
-            this.txtAddress.Id = 34;
-            this.txtAddress.Name = "txtAddress";
-            // 
-            // repositoryItemTextEdit3
-            // 
-            this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
-            // 
-            // barEditItem2
-            // 
-            this.barEditItem2.Caption = "数据长度:";
-            this.barEditItem2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "Lenght", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.barEditItem2.Edit = this.repositoryItemSpinEdit3;
-            this.barEditItem2.EditValue = "1";
-            this.barEditItem2.EditWidth = 80;
-            this.barEditItem2.Id = 35;
-            this.barEditItem2.Name = "barEditItem2";
-            // 
-            // repositoryItemSpinEdit3
-            // 
-            this.repositoryItemSpinEdit3.AutoHeight = false;
-            this.repositoryItemSpinEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
-            // 
-            // cbxValueType
-            // 
-            this.cbxValueType.Caption = "数值类型:";
-            this.cbxValueType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "ValueType", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbxValueType.Edit = this.repositoryItemComboBox3;
-            this.cbxValueType.EditValue = "Long";
-            this.cbxValueType.EditWidth = 80;
-            this.cbxValueType.Id = 36;
-            this.cbxValueType.Name = "cbxValueType";
-            // 
-            // repositoryItemComboBox3
-            // 
-            this.repositoryItemComboBox3.AutoHeight = false;
-            this.repositoryItemComboBox3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox3.Items.AddRange(new object[] {
-            "Boolean",
-            "Long",
-            "Double",
-            "String"});
-            this.repositoryItemComboBox3.Name = "repositoryItemComboBox3";
-            // 
-            // btnConfigBus
-            // 
-            this.btnConfigBus.Caption = "配置ModBus";
-            this.btnConfigBus.Id = 37;
-            this.btnConfigBus.ImageOptions.Image = global::IoTSharp.Cicada.Properties.Resources.chartyaxissettings_16x16;
-            this.btnConfigBus.ImageOptions.LargeImage = global::IoTSharp.Cicada.Properties.Resources.chartyaxissettings_32x32;
-            this.btnConfigBus.Name = "btnConfigBus";
-            this.btnConfigBus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnConfigBus_ItemClickAsync);
-            // 
-            // txtExtModbus
-            // 
-            this.txtExtModbus.Caption = "数据前缀:";
-            this.txtExtModbus.DataBindings.Add(new System.Windows.Forms.Binding("AccessibleDescription", this.modBusConfigBindingSource, "KeyNameOrPrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtExtModbus.Edit = this.repositoryItemTextEdit4;
-            this.txtExtModbus.EditWidth = 80;
-            this.txtExtModbus.Id = 38;
-            this.txtExtModbus.Name = "txtExtModbus";
-            // 
-            // repositoryItemTextEdit4
-            // 
-            this.repositoryItemTextEdit4.AutoHeight = false;
-            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
-            // 
-            // cbxDataType
-            // 
-            this.cbxDataType.Caption = "数据类型:";
-            this.cbxDataType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "DataType", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbxDataType.Edit = this.repositoryItemComboBox4;
-            this.cbxDataType.EditWidth = 80;
-            this.cbxDataType.Id = 39;
-            this.cbxDataType.Name = "cbxDataType";
-            // 
-            // repositoryItemComboBox4
-            // 
-            this.repositoryItemComboBox4.AutoHeight = false;
-            this.repositoryItemComboBox4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox4.Items.AddRange(new object[] {
-            "Telemetry",
-            "Attribute"});
-            this.repositoryItemComboBox4.Name = "repositoryItemComboBox4";
-            // 
-            // btnReadModBus
-            // 
-            this.btnReadModBus.Caption = "读取ModBus";
-            this.btnReadModBus.Id = 40;
-            this.btnReadModBus.ImageOptions.Image = global::IoTSharp.Cicada.Properties.Resources.openhighlowclosecandlestick2_16x16;
-            this.btnReadModBus.ImageOptions.LargeImage = global::IoTSharp.Cicada.Properties.Resources.openhighlowclosecandlestick2_32x32;
-            this.btnReadModBus.Name = "btnReadModBus";
-            this.btnReadModBus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReadModBus_ItemClick);
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.rpgModBus,
             this.ribbonPageGroup3});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
@@ -588,42 +275,22 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnGetToken);
             this.ribbonPageGroup2.ItemLinks.Add(this.txtToken);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "打印和导出";
             // 
-            // rpgModBus
-            // 
-            this.rpgModBus.ItemLinks.Add(this.btnReadModBus);
-            this.rpgModBus.ItemLinks.Add(this.cbxDataType);
-            this.rpgModBus.ItemLinks.Add(this.txtExtModbus);
-            this.rpgModBus.ItemLinks.Add(this.cbxValueType);
-            this.rpgModBus.ItemLinks.Add(this.txtAddress);
-            this.rpgModBus.ItemLinks.Add(this.barEditItem2);
-            this.rpgModBus.ItemLinks.Add(this.txtModBusUri);
-            this.rpgModBus.ItemLinks.Add(this.btnConfigBus);
-            this.rpgModBus.Name = "rpgModBus";
-            this.rpgModBus.Text = "配置ModBus读取任务";
-            // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAttTest);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnTTest);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "数据接口测试";
             // 
-            // repositoryItemSpinEdit1
+            // repositoryItemTextEdit1
             // 
-            this.repositoryItemSpinEdit1.AutoHeight = false;
-            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // ribbonStatusBar
             // 
@@ -633,89 +300,33 @@
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1498, 37);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1308, 37);
             // 
-            // repositoryItemPopupGalleryEdit1
+            // attributeLatestBindingSource
             // 
-            this.repositoryItemPopupGalleryEdit1.AutoHeight = false;
-            this.repositoryItemPopupGalleryEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemPopupGalleryEdit1.Name = "repositoryItemPopupGalleryEdit1";
+            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
             // 
-            // repositoryItemPopupGalleryEdit2
+            // telemetryLatestBindingSource
             // 
-            this.repositoryItemPopupGalleryEdit2.AutoHeight = false;
-            this.repositoryItemPopupGalleryEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemPopupGalleryEdit2.Name = "repositoryItemPopupGalleryEdit2";
+            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.TelemetryLatest);
             // 
-            // repositoryItemComboBox1
+            // timer1
             // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Items.AddRange(new object[] {
-            "设备",
-            "网关"});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // repositoryItemComboBox2
-            // 
-            this.repositoryItemComboBox2.AutoHeight = false;
-            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
-            // 
-            // dockManager1
-            // 
-            this.dockManager1.Form = this;
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
-            this.dockManager1.TopZIndexControls.AddRange(new string[] {
-            "DevExpress.XtraBars.BarDockControl",
-            "DevExpress.XtraBars.StandaloneBarDockControl",
-            "System.Windows.Forms.StatusBar",
-            "System.Windows.Forms.MenuStrip",
-            "System.Windows.Forms.StatusStrip",
-            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
-            "DevExpress.XtraBars.Ribbon.RibbonControl",
-            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
-            "DevExpress.XtraBars.Navigation.TileNavPane",
-            "DevExpress.XtraBars.TabFormControl",
-            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl"});
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("05b6e32e-42f9-46fc-8dc5-5f32ee948d60");
-            this.dockPanel1.Location = new System.Drawing.Point(1060, 183);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(438, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(438, 609);
-            this.dockPanel1.Text = "属性与遥测";
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.splitContainerControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(7, 27);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(426, 577);
-            this.dockPanel1_Container.TabIndex = 0;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 183);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(426, 577);
-            this.splitContainerControl1.SplitterPosition = 278;
-            this.splitContainerControl1.TabIndex = 0;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1308, 609);
+            this.splitContainerControl1.SplitterPosition = 612;
+            this.splitContainerControl1.TabIndex = 6;
             // 
             // gridControl1
             // 
@@ -727,14 +338,10 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTimeEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(426, 278);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(612, 609);
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
-            // 
-            // attributeLatestBindingSource
-            // 
-            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
             // 
             // gridView2
             // 
@@ -903,14 +510,10 @@
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(426, 293);
-            this.gridControl2.TabIndex = 0;
+            this.gridControl2.Size = new System.Drawing.Size(690, 609);
+            this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
-            // 
-            // telemetryLatestBindingSource
-            // 
-            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.TelemetryLatest);
             // 
             // gridView3
             // 
@@ -1065,66 +668,41 @@
             this.colValue_Binary1.VisibleIndex = 11;
             this.colValue_Binary1.Width = 94;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // frmDevices
+            // frmDevData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 829);
-            this.Controls.Add(this.gridControl);
-            this.Controls.Add(this.dockPanel1);
+            this.ClientSize = new System.Drawing.Size(1308, 829);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmDevices";
+            this.Name = "frmDevData";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
-            this.Load += new System.EventHandler(this.frmCustomerAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            this.Load += new System.EventHandler(this.frmDevData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enumKeyValueBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modBusConfigBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupGalleryEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupGalleryEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
+   
 
-        private DevExpress.XtraGrid.GridControl gridControl;
+        #endregion
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -1137,15 +715,6 @@
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
         private System.Windows.Forms.BindingSource deviceBindingSource;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPopupGalleryEdit repositoryItemPopupGalleryEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPopupGalleryEdit repositoryItemPopupGalleryEdit2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colType;
-        private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraBars.BarButtonItem btnAttTest;
         private DevExpress.XtraBars.BarButtonItem btnTTest;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -1157,15 +726,20 @@
         private DevExpress.XtraBars.BarButtonItem btnGetToken;
         private DevExpress.XtraBars.BarEditItem txtToken;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private System.Windows.Forms.BindingSource attributeLatestBindingSource;
+        private System.Windows.Forms.BindingSource telemetryLatestBindingSource;
+        private DevExpress.XtraBars.BarStaticItem lblInfo;
+        private System.Windows.Forms.BindingSource enumKeyValueBindingSource;
+        private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.BindingSource attributeLatestBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colId1;
         private DevExpress.XtraGrid.Columns.GridColumn colKeyName;
         private DevExpress.XtraGrid.Columns.GridColumn colCatalog;
         private DevExpress.XtraGrid.Columns.GridColumn colType1;
         private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Boolean;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_String;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Long;
@@ -1173,8 +747,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Json;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_XML;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Binary;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDateTimeValue2;
         private DevExpress.XtraGrid.GridControl gridControl2;
-        private System.Windows.Forms.BindingSource telemetryLatestBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn colId2;
         private DevExpress.XtraGrid.Columns.GridColumn colKeyName1;
@@ -1185,37 +759,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colValue_String1;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Long1;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Double1;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue_DataTime;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Json1;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_XML1;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_Binary1;
-        private DevExpress.XtraBars.BarStaticItem lblInfo;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
-        private System.Windows.Forms.BindingSource enumKeyValueBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_DataTime;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDateTimeValue2;
-        private System.Windows.Forms.Timer timer1;
-        private DevExpress.XtraBars.BarButtonItem btnModBus;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgModBus;
-        private DevExpress.XtraBars.BarEditItem txtModBusUri;
-        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
-        private DevExpress.XtraBars.BarEditItem barEditItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
-        private DevExpress.XtraBars.BarEditItem txtAddress;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
-        private DevExpress.XtraBars.BarEditItem barEditItem2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit3;
-        private DevExpress.XtraBars.BarEditItem cbxValueType;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;
-        private DevExpress.XtraBars.BarButtonItem btnConfigBus;
-        private DevExpress.XtraBars.BarEditItem txtExtModbus;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
-        private DevExpress.XtraBars.BarEditItem cbxDataType;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox4;
-        private System.Windows.Forms.BindingSource modBusConfigBindingSource;
-        private DevExpress.XtraBars.BarButtonItem btnReadModBus;
     }
 }
