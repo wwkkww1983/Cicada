@@ -59,8 +59,8 @@ namespace IoTSharp.Cicada
                 if (row != null)
                 {
                     var dev = SdkClient.Create<DevicesClient>();
-                    var al = await dev.GetAttributeLatestAsync(row.Id);
-                    var tl = await dev.GetTelemetryLatestAsync(row.Id);
+                    var al = await dev.GetAttributeLatestAllAsync(row.Id);
+                    var tl = await dev.GetTelemetryLatestAllAsync(row.Id);
                     this.Invoke((MethodInvoker)delegate
                     {
                         attributeLatestBindingSource.DataSource = al;

@@ -54,7 +54,7 @@ namespace IoTSharp.Cicada
 
         public override Task<Device> Post(Device obj, CancellationToken token)
         {
-            return Client.PostDeviceAsync( new Device() {  DeviceType=obj.DeviceType, Name=obj.Name} , token);
+            return Client.PostDeviceAsync( new  DevicePostDto () {  DeviceType=obj.DeviceType, Name=obj.Name} , token);
         }
 
         public override Task<ICollection<Device>> GetAllAsync(CancellationToken token)
@@ -154,8 +154,8 @@ namespace IoTSharp.Cicada
                 if (row != null)
                 {
                     var dev = SdkClient.Create<DevicesClient>();
-                    var al = await dev.GetAttributeLatestAsync(row.Id);
-                    var tl = await dev.GetTelemetryLatestAsync(row.Id);
+                    var al = await dev.GetTelemetryLatestAllAsync(row.Id);
+                    var tl = await dev.GetTelemetryLatestAllAsync(row.Id);
                     this.Invoke((MethodInvoker)delegate
                     {
                         attributeLatestBindingSource.DataSource = al;
