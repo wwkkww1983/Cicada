@@ -33,12 +33,12 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
+            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSettings = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnTen = new DevExpress.XtraBars.BarButtonItem();
-            this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.btnDevices = new DevExpress.XtraBars.BarButtonItem();
@@ -95,6 +95,10 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
             // 
+            // sessionBindingSource
+            // 
+            this.sessionBindingSource.DataSource = typeof(IoTSharp.Sdk.CSharp.Session);
+            // 
             // btnSettings
             // 
             this.btnSettings.Caption = "系统设置";
@@ -117,6 +121,7 @@
             this.btnLogout.Id = 4;
             this.btnLogout.ImageOptions.SvgImage = global::IoTSharp.Cicada.Properties.Resources.walking;
             this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLogout_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -132,10 +137,6 @@
             this.btnTen.ImageOptions.SvgImage = global::IoTSharp.Cicada.Properties.Resources.bo_lead;
             this.btnTen.Name = "btnTen";
             this.btnTen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTen_ItemClick);
-            // 
-            // sessionBindingSource
-            // 
-            this.sessionBindingSource.DataSource = typeof(IoTSharp.Sdk.CSharp.Session);
             // 
             // skinRibbonGalleryBarItem1
             // 

@@ -66,5 +66,10 @@ namespace IoTSharp.Cicada
                 opt.Text = $"设备管理-{opt.Customer.Name}";
             });
         }
+
+        private void BtnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
