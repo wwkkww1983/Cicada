@@ -63,7 +63,7 @@
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.txtAddress = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.txtLenght = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.cbxValueType = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -259,6 +259,7 @@
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
@@ -278,7 +279,7 @@
             this.txtModBusUri,
             this.barEditItem1,
             this.txtAddress,
-            this.barEditItem2,
+            this.txtLenght,
             this.cbxValueType,
             this.btnConfigBus,
             this.txtExtModbus,
@@ -371,14 +372,12 @@
             this.barButtonItem1.Caption = "MQTT属性数据测试";
             this.barButtonItem1.Id = 23;
             this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "MQTT遥测数据测试";
             this.barButtonItem2.Id = 24;
             this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -461,7 +460,7 @@
             // txtAddress
             // 
             this.txtAddress.Caption = "ModBus地址:";
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("AccessibleDescription", this.modBusConfigBindingSource, "Address", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "Address", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtAddress.Edit = this.repositoryItemTextEdit3;
             this.txtAddress.EditValue = "100";
             this.txtAddress.EditWidth = 63;
@@ -473,21 +472,28 @@
             this.repositoryItemTextEdit3.AutoHeight = false;
             this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
-            // barEditItem2
+            // txtLenght
             // 
-            this.barEditItem2.Caption = "数据长度:";
-            this.barEditItem2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "Lenght", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.barEditItem2.Edit = this.repositoryItemSpinEdit3;
-            this.barEditItem2.EditValue = "1";
-            this.barEditItem2.EditWidth = 80;
-            this.barEditItem2.Id = 35;
-            this.barEditItem2.Name = "barEditItem2";
+            this.txtLenght.Caption = "数据长度:";
+            this.txtLenght.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "Lenght", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, "1", "N0"));
+            this.txtLenght.Edit = this.repositoryItemSpinEdit3;
+            this.txtLenght.EditValue = 1;
+            this.txtLenght.EditWidth = 80;
+            this.txtLenght.Id = 35;
+            this.txtLenght.Name = "txtLenght";
             // 
             // repositoryItemSpinEdit3
             // 
             this.repositoryItemSpinEdit3.AutoHeight = false;
             this.repositoryItemSpinEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit3.IsFloatValue = false;
+            this.repositoryItemSpinEdit3.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit3.MaxValue = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
             // 
             // cbxValueType
@@ -495,7 +501,7 @@
             this.cbxValueType.Caption = "数值类型:";
             this.cbxValueType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "ValueType", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbxValueType.Edit = this.repositoryItemComboBox3;
-            this.cbxValueType.EditValue = "Long";
+            this.cbxValueType.EditValue = "UInt32";
             this.cbxValueType.EditWidth = 80;
             this.cbxValueType.Id = 36;
             this.cbxValueType.Name = "cbxValueType";
@@ -506,10 +512,17 @@
             this.repositoryItemComboBox3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox3.Items.AddRange(new object[] {
-            "Boolean",
+            "Coil",
             "Long",
             "Double",
-            "String"});
+            "Float",
+            "UInt32",
+            "UInt16",
+            "Int32",
+            "Int16",
+            "String",
+            "Int64",
+            "UInt64"});
             this.repositoryItemComboBox3.Name = "repositoryItemComboBox3";
             // 
             // btnConfigBus
@@ -524,7 +537,7 @@
             // txtExtModbus
             // 
             this.txtExtModbus.Caption = "数据前缀:";
-            this.txtExtModbus.DataBindings.Add(new System.Windows.Forms.Binding("AccessibleDescription", this.modBusConfigBindingSource, "KeyNameOrPrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtExtModbus.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modBusConfigBindingSource, "KeyNameOrPrefix", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtExtModbus.Edit = this.repositoryItemTextEdit4;
             this.txtExtModbus.EditWidth = 80;
             this.txtExtModbus.Id = 38;
@@ -601,7 +614,7 @@
             this.rpgModBus.ItemLinks.Add(this.txtExtModbus);
             this.rpgModBus.ItemLinks.Add(this.cbxValueType);
             this.rpgModBus.ItemLinks.Add(this.txtAddress);
-            this.rpgModBus.ItemLinks.Add(this.barEditItem2);
+            this.rpgModBus.ItemLinks.Add(this.txtLenght);
             this.rpgModBus.ItemLinks.Add(this.txtModBusUri);
             this.rpgModBus.ItemLinks.Add(this.btnConfigBus);
             this.rpgModBus.Name = "rpgModBus";
@@ -1206,7 +1219,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
         private DevExpress.XtraBars.BarEditItem txtAddress;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
-        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraBars.BarEditItem txtLenght;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit3;
         private DevExpress.XtraBars.BarEditItem cbxValueType;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;

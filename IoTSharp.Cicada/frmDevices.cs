@@ -66,12 +66,13 @@ namespace IoTSharp.Cicada
         {
             return Client.DeleteDeviceAsync(obj.Id, token);
         }
-
+        ModBusConfig ModBusConfig;
         private void frmCustomerAdmin_Load(object sender, EventArgs e)
         {
             InitializeGridView(gridView1, colId);
             Client = SdkClient.Create<DevicesClient>();
             enumKeyValueBindingSource.BindingEnum<DeviceType>();
+            
         }
 
         private void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -134,18 +135,15 @@ namespace IoTSharp.Cicada
                       rpgModBus.Enabled = row.DeviceType == DeviceType.Gateway;
                       if (row.DeviceType == DeviceType.Gateway)
                       {
-                          if (modBusConfigBindingSource.Count==0)
-                          {
-                              modBusConfigBindingSource.Add( new ModBusConfig()
+                              modBusConfigBindingSource.DataSource = new ModBusConfig()
                               {
                                   Address = "100",
                                   KeyNameOrPrefix = "ModBus",
                                   ModBusUri = new Uri("modbus://127.0.0.1:502/1"),
                                   Lenght = 1,
-                                  ValueType = "String",
+                                  ValueType = "UInt32",
                                   DataType = "Telemetry"
-                              });
-                          }
+                              }; ;
                       }
                   }
                   
@@ -199,14 +197,21 @@ namespace IoTSharp.Cicada
 
         private async void  BtnConfigBus_ItemClickAsync(object sender, ItemClickEventArgs e)
         {
-            var mc = modBusConfigBindingSource.Current as ModBusConfig;
-
-            var dev = SdkClient.Create<DevicesClient>();
-            var dis = new Dictionary<string, object>();
-            dis.Add("ModBusConfig", mc);
-            await dev.Attributes2Async(txtToken.EditValue.ToString(), dis);
-            await ReloadLatest();
-
+            
+                ModBusConfig modBus = new ModBusConfig()
+                {
+                     Address=txtAddress.EditValue.ToString(),
+                      DataType=cbxDataType.EditValue.ToString(),
+                       KeyNameOrPrefix=txtExtModbus.EditValue.ToString(),
+                        Lenght=int.Parse( txtLenght.EditValue.ToString()),
+                         ModBusUri= new Uri(txtModBusUri.EditValue.ToString()),
+                          ValueType=cbxValueType.EditValue.ToString()
+                };
+                var dev = SdkClient.Create<DevicesClient>();
+                var dis = new Dictionary<string, object>();
+                dis.Add("ModBusConfig", modBus);
+                await dev.Attributes2Async(txtToken.EditValue.ToString(), dis);
+                await ReloadLatest();
 
         }
 
@@ -223,14 +228,6 @@ namespace IoTSharp.Cicada
             }
         }
 
-        private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void BarButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
+        
     }
 }
