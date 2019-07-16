@@ -1,3 +1,7 @@
 [submodule "IoTSharp.SDKs"]
 	path = IoTSharp.SDKs
 	url = https://github.com/IoTSharp/IoTSharp.SDKs.git
+[submodule "JsonEditor"]
+	path = JsonEditor
+	url = https://github.com/maikebing/JSon-Editor.git
+	branch = master

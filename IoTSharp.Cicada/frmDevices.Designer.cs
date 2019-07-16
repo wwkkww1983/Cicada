@@ -88,23 +88,20 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
+            this.xtraDataEditor1 = new IoTSharp.Cicada.XtraDataEditor();
+            this.deviceDataDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.attributeLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKeyName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCatalog = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDataSide = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.gcDataStorage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPopupContainerEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
-            this.colValue_Boolean = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_String = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_Long = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_Double = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_Json = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_XML = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colValue_Binary = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcDateTimeValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.telemetryLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -121,6 +118,7 @@
             this.colValue_Json1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_XML1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue_Binary1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.attributeLatestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
@@ -148,13 +146,19 @@
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
+            this.popupContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceDataDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl
@@ -173,7 +177,7 @@
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2});
-            this.gridControl.Size = new System.Drawing.Size(1060, 609);
+            this.gridControl.Size = new System.Drawing.Size(832, 609);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -198,15 +202,7 @@
             // 
             // colId
             // 
-            this.colId.Caption = "设备标识";
-            this.colId.FieldName = "Id";
-            this.colId.MinWidth = 25;
             this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
-            this.colId.OptionsColumn.ReadOnly = true;
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            this.colId.Width = 94;
             // 
             // colName
             // 
@@ -216,7 +212,7 @@
             this.colName.Name = "colName";
             this.colName.OptionsEditForm.StartNewRow = true;
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
+            this.colName.VisibleIndex = 0;
             this.colName.Width = 94;
             // 
             // colType
@@ -229,7 +225,7 @@
             this.colType.OptionsEditForm.StartNewRow = true;
             this.colType.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 2;
+            this.colType.VisibleIndex = 1;
             this.colType.Width = 94;
             // 
             // repositoryItemGridLookUpEdit1
@@ -702,10 +698,10 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("05b6e32e-42f9-46fc-8dc5-5f32ee948d60");
-            this.dockPanel1.Location = new System.Drawing.Point(1060, 183);
+            this.dockPanel1.Location = new System.Drawing.Point(832, 183);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(438, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(438, 609);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(666, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(666, 609);
             this.dockPanel1.Text = "属性与遥测";
             // 
             // dockPanel1_Container
@@ -713,7 +709,7 @@
             this.dockPanel1_Container.Controls.Add(this.splitContainerControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(7, 27);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(426, 577);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(654, 577);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // splitContainerControl1
@@ -722,102 +718,163 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.popupContainerControl1);
             this.splitContainerControl1.Panel1.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(426, 577);
+            this.splitContainerControl1.Size = new System.Drawing.Size(654, 577);
             this.splitContainerControl1.SplitterPosition = 278;
             this.splitContainerControl1.TabIndex = 0;
             // 
+            // popupContainerControl1
+            // 
+            this.popupContainerControl1.Controls.Add(this.xtraDataEditor1);
+            this.popupContainerControl1.Location = new System.Drawing.Point(50, 39);
+            this.popupContainerControl1.Name = "popupContainerControl1";
+            this.popupContainerControl1.Size = new System.Drawing.Size(574, 260);
+            this.popupContainerControl1.TabIndex = 2;
+            // 
+            // xtraDataEditor1
+            // 
+            this.xtraDataEditor1.DataBindings.Add(new System.Windows.Forms.Binding("DataStorage", this.deviceDataDtoBindingSource, "DataStorage", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.xtraDataEditor1.DataStorage = null;
+            this.xtraDataEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraDataEditor1.Location = new System.Drawing.Point(0, 0);
+            this.xtraDataEditor1.Name = "xtraDataEditor1";
+            this.xtraDataEditor1.Size = new System.Drawing.Size(574, 260);
+            this.xtraDataEditor1.TabIndex = 0;
+            // 
+            // deviceDataDtoBindingSource
+            // 
+            this.deviceDataDtoBindingSource.DataSource = typeof(IoTSharp.Cicada.Models.DeviceDataDto);
+            // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.attributeLatestBindingSource;
+            this.gridControl1.DataSource = this.deviceDataDtoBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.MenuManager = this.ribbonControl;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTimeEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(426, 278);
+            this.repositoryItemTimeEdit1,
+            this.repositoryItemDateEdit1,
+            this.repositoryItemPopupContainerEdit1});
+            this.gridControl1.Size = new System.Drawing.Size(654, 278);
             this.gridControl1.TabIndex = 0;
+            this.gridControl1.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
-            // 
-            // attributeLatestBindingSource
-            // 
-            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
             // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId1,
             this.colKeyName,
-            this.colCatalog,
+            this.colDataSide,
             this.colType1,
             this.colDateTime,
-            this.colValue_Boolean,
-            this.colValue_String,
-            this.colValue_Long,
-            this.colValue_Double,
-            this.colValue_Json,
-            this.colValue_XML,
-            this.colValue_Binary,
-            this.gcDateTimeValue2});
+            this.gcDataStorage});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colId1
             // 
-            this.colId1.Caption = "属性数据ID";
+            this.colId1.Caption = "Id";
             this.colId1.FieldName = "Id";
             this.colId1.MinWidth = 25;
             this.colId1.Name = "colId1";
+            this.colId1.OptionsColumn.ReadOnly = true;
             this.colId1.Visible = true;
             this.colId1.VisibleIndex = 0;
             this.colId1.Width = 94;
             // 
             // colKeyName
             // 
-            this.colKeyName.Caption = "属性键名";
+            this.colKeyName.Caption = "属性名称";
             this.colKeyName.FieldName = "KeyName";
             this.colKeyName.MinWidth = 25;
             this.colKeyName.Name = "colKeyName";
+            this.colKeyName.OptionsColumn.ReadOnly = true;
             this.colKeyName.Visible = true;
             this.colKeyName.VisibleIndex = 1;
             this.colKeyName.Width = 94;
             // 
-            // colCatalog
+            // colDataSide
             // 
-            this.colCatalog.Caption = "属性类别";
-            this.colCatalog.FieldName = "Catalog";
-            this.colCatalog.MinWidth = 25;
-            this.colCatalog.Name = "colCatalog";
-            this.colCatalog.Visible = true;
-            this.colCatalog.VisibleIndex = 2;
-            this.colCatalog.Width = 94;
+            this.colDataSide.Caption = "数据偏袒";
+            this.colDataSide.FieldName = "DataSide";
+            this.colDataSide.MinWidth = 25;
+            this.colDataSide.Name = "colDataSide";
+            this.colDataSide.OptionsColumn.ReadOnly = true;
+            this.colDataSide.Visible = true;
+            this.colDataSide.VisibleIndex = 2;
+            this.colDataSide.Width = 94;
             // 
             // colType1
             // 
-            this.colType1.Caption = "属性数据类型";
+            this.colType1.Caption = "类型";
             this.colType1.FieldName = "Type";
             this.colType1.MinWidth = 25;
             this.colType1.Name = "colType1";
+            this.colType1.OptionsColumn.AllowEdit = false;
+            this.colType1.OptionsColumn.ReadOnly = true;
             this.colType1.Visible = true;
             this.colType1.VisibleIndex = 3;
             this.colType1.Width = 94;
             // 
             // colDateTime
             // 
-            this.colDateTime.Caption = "上传时间";
-            this.colDateTime.ColumnEdit = this.repositoryItemTimeEdit1;
+            this.colDateTime.Caption = "更新时间";
+            this.colDateTime.ColumnEdit = this.repositoryItemDateEdit1;
+            this.colDateTime.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.colDateTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colDateTime.FieldName = "DateTime";
             this.colDateTime.MinWidth = 25;
             this.colDateTime.Name = "colDateTime";
+            this.colDateTime.OptionsColumn.AllowEdit = false;
+            this.colDateTime.OptionsColumn.ReadOnly = true;
             this.colDateTime.Visible = true;
             this.colDateTime.VisibleIndex = 4;
             this.colDateTime.Width = 94;
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.EditMask = "yyyy-MM-dd HH:mm:ss";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.ReadOnly = true;
+            // 
+            // gcDataStorage
+            // 
+            this.gcDataStorage.Caption = "属性数据";
+            this.gcDataStorage.ColumnEdit = this.repositoryItemPopupContainerEdit1;
+            this.gcDataStorage.FieldName = "DataStorage";
+            this.gcDataStorage.MinWidth = 25;
+            this.gcDataStorage.Name = "gcDataStorage";
+            this.gcDataStorage.Visible = true;
+            this.gcDataStorage.VisibleIndex = 5;
+            this.gcDataStorage.Width = 94;
+            // 
+            // repositoryItemPopupContainerEdit1
+            // 
+            this.repositoryItemPopupContainerEdit1.AutoHeight = false;
+            this.repositoryItemPopupContainerEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemPopupContainerEdit1.Name = "repositoryItemPopupContainerEdit1";
+            this.repositoryItemPopupContainerEdit1.PopupControl = this.popupContainerControl1;
+            this.repositoryItemPopupContainerEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.RepositoryItemPopupContainerEdit1_CustomDisplayText);
             // 
             // repositoryItemTimeEdit1
             // 
@@ -828,86 +885,6 @@
             this.repositoryItemTimeEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
             // 
-            // colValue_Boolean
-            // 
-            this.colValue_Boolean.Caption = "布尔值";
-            this.colValue_Boolean.FieldName = "Value_Boolean";
-            this.colValue_Boolean.MinWidth = 25;
-            this.colValue_Boolean.Name = "colValue_Boolean";
-            this.colValue_Boolean.Visible = true;
-            this.colValue_Boolean.VisibleIndex = 5;
-            this.colValue_Boolean.Width = 94;
-            // 
-            // colValue_String
-            // 
-            this.colValue_String.Caption = "字符串值";
-            this.colValue_String.FieldName = "Value_String";
-            this.colValue_String.MinWidth = 25;
-            this.colValue_String.Name = "colValue_String";
-            this.colValue_String.Visible = true;
-            this.colValue_String.VisibleIndex = 6;
-            this.colValue_String.Width = 94;
-            // 
-            // colValue_Long
-            // 
-            this.colValue_Long.Caption = "长整型值";
-            this.colValue_Long.FieldName = "Value_Long";
-            this.colValue_Long.MinWidth = 25;
-            this.colValue_Long.Name = "colValue_Long";
-            this.colValue_Long.Visible = true;
-            this.colValue_Long.VisibleIndex = 7;
-            this.colValue_Long.Width = 94;
-            // 
-            // colValue_Double
-            // 
-            this.colValue_Double.Caption = "双精度值";
-            this.colValue_Double.FieldName = "Value_Double";
-            this.colValue_Double.MinWidth = 25;
-            this.colValue_Double.Name = "colValue_Double";
-            this.colValue_Double.Visible = true;
-            this.colValue_Double.VisibleIndex = 8;
-            this.colValue_Double.Width = 94;
-            // 
-            // colValue_Json
-            // 
-            this.colValue_Json.Caption = "Json值";
-            this.colValue_Json.FieldName = "Value_Json";
-            this.colValue_Json.MinWidth = 25;
-            this.colValue_Json.Name = "colValue_Json";
-            this.colValue_Json.Visible = true;
-            this.colValue_Json.VisibleIndex = 9;
-            this.colValue_Json.Width = 94;
-            // 
-            // colValue_XML
-            // 
-            this.colValue_XML.Caption = "XML值";
-            this.colValue_XML.FieldName = "Value_XML";
-            this.colValue_XML.MinWidth = 25;
-            this.colValue_XML.Name = "colValue_XML";
-            this.colValue_XML.Visible = true;
-            this.colValue_XML.VisibleIndex = 10;
-            this.colValue_XML.Width = 94;
-            // 
-            // colValue_Binary
-            // 
-            this.colValue_Binary.Caption = "二进制值";
-            this.colValue_Binary.FieldName = "Value_Binary";
-            this.colValue_Binary.MinWidth = 25;
-            this.colValue_Binary.Name = "colValue_Binary";
-            this.colValue_Binary.Visible = true;
-            this.colValue_Binary.VisibleIndex = 11;
-            this.colValue_Binary.Width = 94;
-            // 
-            // gcDateTimeValue2
-            // 
-            this.gcDateTimeValue2.Caption = "时间属性值";
-            this.gcDateTimeValue2.FieldName = "Value_DateTime";
-            this.gcDateTimeValue2.MinWidth = 25;
-            this.gcDateTimeValue2.Name = "gcDateTimeValue2";
-            this.gcDateTimeValue2.Visible = true;
-            this.gcDateTimeValue2.VisibleIndex = 12;
-            this.gcDateTimeValue2.Width = 94;
-            // 
             // gridControl2
             // 
             this.gridControl2.DataSource = this.telemetryLatestBindingSource;
@@ -916,7 +893,7 @@
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.MenuManager = this.ribbonControl;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(426, 293);
+            this.gridControl2.Size = new System.Drawing.Size(654, 293);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -943,6 +920,7 @@
             this.colValue_Binary1});
             this.gridView3.GridControl = this.gridControl2;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // colId2
             // 
@@ -1078,6 +1056,10 @@
             this.colValue_Binary1.VisibleIndex = 11;
             this.colValue_Binary1.Width = 94;
             // 
+            // attributeLatestBindingSource
+            // 
+            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
+            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -1123,13 +1105,19 @@
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
+            this.popupContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.deviceDataDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telemetryLatestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attributeLatestBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1174,18 +1162,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.BindingSource attributeLatestBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colKeyName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCatalog;
-        private DevExpress.XtraGrid.Columns.GridColumn colType1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_Boolean;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_String;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_Long;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_Double;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_Json;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_XML;
-        private DevExpress.XtraGrid.Columns.GridColumn colValue_Binary;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private System.Windows.Forms.BindingSource telemetryLatestBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
@@ -1209,7 +1185,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private System.Windows.Forms.BindingSource enumKeyValueBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colValue_DataTime;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDateTimeValue2;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraBars.BarButtonItem btnModBus;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgModBus;
@@ -1230,5 +1205,16 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox4;
         private System.Windows.Forms.BindingSource modBusConfigBindingSource;
         private DevExpress.XtraBars.BarButtonItem btnReadModBus;
+        private System.Windows.Forms.BindingSource deviceDataDtoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colId1;
+        private DevExpress.XtraGrid.Columns.GridColumn colKeyName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDataSide;
+        private DevExpress.XtraGrid.Columns.GridColumn colType1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDataStorage;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit1;
+        private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
+        private XtraDataEditor xtraDataEditor1;
     }
 }

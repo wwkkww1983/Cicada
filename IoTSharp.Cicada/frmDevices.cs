@@ -121,7 +121,7 @@ namespace IoTSharp.Cicada
             btnGetToken.PerformClick();
             await ReloadLatest();
         }
-
+        
         private async Task ReloadLatest()
         {
             try
@@ -154,9 +154,11 @@ namespace IoTSharp.Cicada
                     var dev = SdkClient.Create<DevicesClient>();
                     var al = await dev.GetTelemetryLatestAllAsync(row.Id);
                     var tl = await dev.GetAttributeLatestAllAsync(row.Id);
+                    var ddds = from d in tl select new DeviceDataDto(d);
                     this.Invoke((MethodInvoker)delegate
                     {
                         attributeLatestBindingSource.DataSource = al;
+                        deviceDataDtoBindingSource.DataSource = ddds;
                         telemetryLatestBindingSource.DataSource = tl;
                     });
                 }
@@ -228,6 +230,9 @@ namespace IoTSharp.Cicada
             }
         }
 
-        
+        private void RepositoryItemPopupContainerEdit1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            e.DisplayText = ((DataStorage)e.Value).ToDisplayText();
+        }
     }
 }

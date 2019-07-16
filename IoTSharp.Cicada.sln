@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTSharp.Cicada", "IoTSharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTSharp.Sdk", "IoTSharp.SDKs\IoTSharp.Sdk.CSharp\IoTSharp.Sdk.csproj", "{5D60CCBE-CECC-482A-8017-FE65D4249F17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonTreeView", "JsonEditor\JsonTreeView\JsonTreeView.csproj", "{9CDC178E-FC2B-4F43-BF78-280D18BEBE18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D60CCBE-CECC-482A-8017-FE65D4249F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D60CCBE-CECC-482A-8017-FE65D4249F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D60CCBE-CECC-482A-8017-FE65D4249F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDC178E-FC2B-4F43-BF78-280D18BEBE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDC178E-FC2B-4F43-BF78-280D18BEBE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDC178E-FC2B-4F43-BF78-280D18BEBE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDC178E-FC2B-4F43-BF78-280D18BEBE18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
