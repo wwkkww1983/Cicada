@@ -61,6 +61,10 @@ namespace IoTSharp.Cicada
                 var ds = await GetAllAsync(cts.Token);
                 modelBindingSource.DataSource = ds != null ? new List<T>(ds) : new List<T>();
             }
+            catch (SwaggerException<ApiResultOfGuid> sear)
+            {
+                XtraMessageBox.Show(sear.Result.Msg);
+            }
             catch (SwaggerException se)
             {
                 var result = se.ToResult();
