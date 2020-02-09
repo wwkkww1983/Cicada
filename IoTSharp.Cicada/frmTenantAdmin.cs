@@ -46,9 +46,10 @@ namespace IoTSharp.Cicada
             DoRefresh();
         }
         private IoTSharp.Sdk.TenantsClient Client = null;
-        public override Task<FileResponse> Put(Tenant obj, CancellationToken token)
+       
+        public override   Task Put(Tenant obj, CancellationToken token)
         {
-            return Client.PutTenantAsync(obj.Id, obj, token);
+            return   Client.PutTenantAsync(obj.Id, obj, token);
         }
         public override Task<Tenant> Post(Tenant obj, CancellationToken token)
         {

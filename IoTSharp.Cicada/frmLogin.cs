@@ -46,7 +46,14 @@ namespace IoTSharp.Cicada
                 catch (SwaggerException sex)
                 {
                     var result = sex.ToResult();
-                    lblInfo.Text = $"错误代码:{result.Code},错误:{result.Msg}";
+                    if (result != null)
+                    {
+                        lblInfo.Text = $"错误代码:{result.Code},错误:{result.Msg}";
+                    }
+                    else
+                    {
+                        lblInfo.Text = sex.Message;
+                    }
                 }
                 catch (Exception)
                 {

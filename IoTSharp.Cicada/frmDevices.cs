@@ -47,7 +47,7 @@ namespace IoTSharp.Cicada
 
         private IoTSharp.Sdk.DevicesClient Client = null;
 
-        public override Task<FileResponse> Put(Device obj, CancellationToken token)
+        public override Task Put(Device obj, CancellationToken token)
         {
             return Client.PutDeviceAsync(obj.Id,  new DevicePutDto(){   Id=obj.Id, Name=obj.Name }, token);
         }

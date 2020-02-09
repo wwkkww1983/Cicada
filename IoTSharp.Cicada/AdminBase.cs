@@ -111,9 +111,9 @@ namespace IoTSharp.Cicada
             return Task.FromResult(obj);
         }
 
-        public virtual Task<FileResponse> Put(T obj, CancellationToken token)
+        public virtual Task Put(T obj, CancellationToken token)
         {
-            return Task.FromResult<FileResponse>(null);
+            return null;
         }
 
         private async void gridView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)

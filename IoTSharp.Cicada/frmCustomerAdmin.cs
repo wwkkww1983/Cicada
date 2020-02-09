@@ -46,13 +46,13 @@ namespace IoTSharp.Cicada
 
         private IoTSharp.Sdk.CustomersClient Client = null;
 
-        public override Task<FileResponse> Put(Customer obj, CancellationToken token)
+        public override Task Put(Customer obj, CancellationToken token)
         {
             var jo = Newtonsoft.Json.Linq.JObject.FromObject(obj);
             jo.Add(nameof(CustomerDto.TenantID), Tenant.Id);
             var s = jo.ToObject<CustomerDto>();
             s.TenantID = Tenant.Id;
-            return Client.PutCustomerAsync(obj.Id, s, token);
+            return  Client.PutCustomerAsync(obj.Id, s, token);
         }
 
         public override Task<Customer> Post(Customer obj, CancellationToken token)

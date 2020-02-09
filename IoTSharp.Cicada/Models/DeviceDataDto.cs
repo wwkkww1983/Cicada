@@ -21,7 +21,6 @@ namespace IoTSharp.Cicada.Models
         }
       
         public DataStorage DataStorage { get; set; }
-        public System.Guid Id => (DataStorage?.Id).GetValueOrDefault(Guid.Empty);
 
         public string KeyName { get { return DataStorage?.KeyName; }  }
 
