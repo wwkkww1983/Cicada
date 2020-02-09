@@ -101,7 +101,7 @@ namespace IoTSharp.Cicada
             try
             {
                 var row = FocusedRow;
-                if (row != null)
+                if (row != null &&  Guid.Empty!= row.Id  )
                 {
                     var dev = SdkClient.Create<DevicesClient>();
                     var ids = await dev.GetIdentityAsync(row.Id);
@@ -109,6 +109,10 @@ namespace IoTSharp.Cicada
                     //XtraMessageBox.Show(ids.ToJson());
                     lblInfo.Caption = "已经获取到该设备Token";
                 }
+            }
+            catch (SwaggerException<ApiResult> ex1)
+            {
+                XtraMessageBox.Show(ex1.Result.Msg);
             }
             catch (Exception ex)
             {

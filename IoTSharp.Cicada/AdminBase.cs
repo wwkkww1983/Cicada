@@ -172,7 +172,7 @@ namespace IoTSharp.Cicada
                 {
                     if (se.StatusCode != 201)
                     {
-                        XtraMessageBox.Show(se.Message + Environment.NewLine + se.ToResult().Msg);
+                        XtraMessageBox.Show(se.Message + Environment.NewLine);
                     }
                 }
                 catch (Exception ex)

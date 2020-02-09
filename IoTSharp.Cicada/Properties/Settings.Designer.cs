@@ -25,7 +25,7 @@ namespace IoTSharp.Cicada.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:32771/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:32768")]
         public string ApiUrl {
             get {
                 return ((string)(this["ApiUrl"]));
