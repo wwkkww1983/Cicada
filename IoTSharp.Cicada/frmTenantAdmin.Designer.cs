@@ -78,7 +78,7 @@
             // 
             // tenantBindingSource
             // 
-            this.tenantBindingSource.DataSource = typeof(IoTSharp.Sdk.Tenant);
+            this.tenantBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.Tenant);
             // 
             // gridView
             // 

@@ -184,7 +184,7 @@
             // 
             // deviceBindingSource
             // 
-            this.deviceBindingSource.DataSource = typeof(IoTSharp.Sdk.Device);
+            this.deviceBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.Device);
             this.deviceBindingSource.CurrentChanged += new System.EventHandler(this.deviceBindingSource_CurrentChangedAsync);
             // 
             // gridView1
@@ -900,7 +900,7 @@
             // 
             // telemetryLatestBindingSource
             // 
-            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.TelemetryLatest);
+            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.TelemetryLatest);
             // 
             // gridView3
             // 
@@ -1058,7 +1058,7 @@
             // 
             // attributeLatestBindingSource
             // 
-            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
+            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.AttributeLatest);
             // 
             // timer1
             // 

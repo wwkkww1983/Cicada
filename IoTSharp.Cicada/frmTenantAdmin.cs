@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Threading;
 
@@ -45,7 +45,7 @@ namespace IoTSharp.Cicada
         {
             DoRefresh();
         }
-        private IoTSharp.Sdk.TenantsClient Client = null;
+        private  TenantsClient Client = null;
        
         public override   Task Put(Tenant obj, CancellationToken token)
         {

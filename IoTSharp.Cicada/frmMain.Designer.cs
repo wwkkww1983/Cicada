@@ -97,7 +97,7 @@
             // 
             // sessionBindingSource
             // 
-            this.sessionBindingSource.DataSource = typeof(IoTSharp.Sdk.CSharp.Session);
+            this.sessionBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.Session);
             // 
             // btnSettings
             // 

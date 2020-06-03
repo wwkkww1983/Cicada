@@ -145,7 +145,7 @@
             // 
             // attributeLatestBindingSource
             // 
-            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
+            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.AttributeLatest);
             // 
             // KeyNameTextEdit
             // 
@@ -168,9 +168,9 @@
             this.DataSideImageComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DataSideImageComboBoxEdit.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("AnySide", IoTSharp.Sdk.DataSide.AnySide, 0),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ServerSide", IoTSharp.Sdk.DataSide.ServerSide, 1),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ClientSide", IoTSharp.Sdk.DataSide.ClientSide, 2)});
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("AnySide", IoTSharp.Sdk.Http.DataSide.AnySide, 0),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ServerSide", IoTSharp.Sdk.Http.DataSide.ServerSide, 1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ClientSide", IoTSharp.Sdk.Http.DataSide.ClientSide, 2)});
             this.DataSideImageComboBoxEdit.Properties.UseCtrlScroll = true;
             this.DataSideImageComboBoxEdit.Size = new System.Drawing.Size(769, 24);
             this.DataSideImageComboBoxEdit.StyleController = this.dataLayoutControl1;
@@ -187,14 +187,14 @@
             this.TypeImageComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.TypeImageComboBoxEdit.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Boolean", IoTSharp.Sdk.DataType.Boolean, 0),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("String", IoTSharp.Sdk.DataType.String, 1),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Long", IoTSharp.Sdk.DataType.Long, 2),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Double", IoTSharp.Sdk.DataType.Double, 3),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Json", IoTSharp.Sdk.DataType.Json, 4),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("XML", IoTSharp.Sdk.DataType.XML, 5),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Binary", IoTSharp.Sdk.DataType.Binary, 6),
-            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("DateTime", IoTSharp.Sdk.DataType.DateTime, 7)});
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Boolean", IoTSharp.Sdk.Http.DataType.Boolean, 0),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("String", IoTSharp.Sdk.Http.DataType.String, 1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Long", IoTSharp.Sdk.Http.DataType.Long, 2),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Double", IoTSharp.Sdk.Http.DataType.Double, 3),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Json", IoTSharp.Sdk.Http.DataType.Json, 4),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("XML", IoTSharp.Sdk.Http.DataType.XML, 5),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Binary", IoTSharp.Sdk.Http.DataType.Binary, 6),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("DateTime", IoTSharp.Sdk.Http.DataType.DateTime, 7)});
             this.TypeImageComboBoxEdit.Properties.UseCtrlScroll = true;
             this.TypeImageComboBoxEdit.Size = new System.Drawing.Size(153, 24);
             this.TypeImageComboBoxEdit.StyleController = this.dataLayoutControl1;

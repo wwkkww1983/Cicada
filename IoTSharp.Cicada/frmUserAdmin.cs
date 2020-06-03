@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
 using System.ComponentModel.DataAnnotations;
-using IoTSharp.Sdk;
+using IoTSharp.Sdk.Http;
 
 namespace IoTSharp.Cicada
 {
@@ -25,11 +25,11 @@ namespace IoTSharp.Cicada
             gridControl.ShowRibbonPrintPreview();
         }
 
-        Sdk.AccountClient Client = null;
+         AccountClient Client = null;
         public Customer Customer    { get; set; }
         private void FrmUserAdmin_Load(object sender, EventArgs e)
         {
-            Client = Sdk.SdkClient.Create<AccountClient>();
+            Client =  SdkClient.Create<AccountClient>();
             Task.Run(Reload);
         }
 

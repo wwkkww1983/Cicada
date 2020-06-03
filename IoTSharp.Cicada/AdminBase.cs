@@ -2,7 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using System;
 using System.Collections.Generic;
 using System.Threading;

@@ -77,7 +77,7 @@
             // 
             // customerBindingSource
             // 
-            this.customerBindingSource.DataSource = typeof(IoTSharp.Sdk.Customer);
+            this.customerBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.Customer);
             // 
             // gridView
             // 

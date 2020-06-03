@@ -193,7 +193,7 @@
             // 
             // registerDtoBindingSource
             // 
-            this.registerDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.RegisterDto);
+            this.registerDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.RegisterDto);
             // 
             // frmCreateUser
             // 

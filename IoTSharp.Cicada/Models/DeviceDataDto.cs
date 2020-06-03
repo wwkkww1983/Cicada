@@ -1,11 +1,11 @@
-﻿using IoTSharp.Sdk;
+﻿using  IoTSharp.Sdk.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataType = IoTSharp.Sdk.DataType;
+using DataType = IoTSharp.Sdk.Http.DataType;
 
 namespace IoTSharp.Cicada.Models
 {

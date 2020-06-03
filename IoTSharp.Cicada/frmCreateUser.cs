@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 
 namespace IoTSharp.Cicada
 {
@@ -21,7 +21,7 @@ namespace IoTSharp.Cicada
 
         private void FrmCreateUser_Load(object sender, EventArgs e)
         {
-            registerDtoBindingSource.DataSource = new Sdk.RegisterDto() {  CustomerId = Customer.Id };
+            registerDtoBindingSource.DataSource = new Sdk.Http.RegisterDto() {  CustomerId = Customer.Id };
             Text = $"为{Customer?.Name}创建用户";
         }
         public Customer Customer { get; set; }

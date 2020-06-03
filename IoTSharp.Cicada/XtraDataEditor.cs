@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using DevExpress.XtraLayout.Utils;
 using IoTSharp.Cicada.Models;
 

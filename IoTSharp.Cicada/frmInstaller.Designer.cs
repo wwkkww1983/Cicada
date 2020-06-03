@@ -348,7 +348,7 @@
             // 
             // installDtoBindingSource
             // 
-            this.installDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.InstallDto);
+            this.installDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.InstallDto);
             // 
             // frmInstaller
             // 

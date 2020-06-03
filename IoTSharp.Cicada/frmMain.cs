@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IoTSharp.Sdk.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace IoTSharp.Cicada
             if (result == DialogResult.OK)
             {
 
-                sessionBindingSource.DataSource = Sdk.SdkClient.Session;
+                sessionBindingSource.DataSource = Sdk.Http.SdkClient.Session;
             }
             else if (result == DialogResult.No)
             {
@@ -40,7 +41,7 @@ namespace IoTSharp.Cicada
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            sessionBindingSource.DataSource = new Sdk.CSharp.Session(null);
+            sessionBindingSource.DataSource = new  Session(null);
         }
 
         private void SetMenuAndBar()
@@ -61,8 +62,8 @@ namespace IoTSharp.Cicada
         {
             this.ShowMdiChildren<frmDevices>(opt =>
             {
-                var cust = IoTSharp.Sdk.SdkClient.Create<IoTSharp.Sdk.DevicesClient>();
-                opt.Customer = IoTSharp.Sdk.SdkClient.MyInfo.Customer;
+                var cust = IoTSharp.Sdk.Http.SdkClient.Create<IoTSharp.Sdk.Http.DevicesClient>();
+                opt.Customer = IoTSharp.Sdk.Http.SdkClient.MyInfo.Customer;
                 opt.Text = $"设备管理-{opt.Customer.Name}";
             });
         }

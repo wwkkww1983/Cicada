@@ -71,7 +71,7 @@
             // 
             // userItemDtoBindingSource
             // 
-            this.userItemDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.UserItemDto);
+            this.userItemDtoBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.UserItemDto);
             // 
             // gridView
             // 

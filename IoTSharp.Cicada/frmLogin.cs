@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using System.Threading;
 
 namespace IoTSharp.Cicada
@@ -22,7 +22,7 @@ namespace IoTSharp.Cicada
 
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
         {
-            var Client = SdkClient.Create<IoTSharp.Sdk.AccountClient>();
+            var Client = SdkClient.Create<IoTSharp.Sdk.Http.AccountClient>();
             string username = txtUserName.Text;
             string password = txtPassword.Text;
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -113,7 +113,7 @@ namespace IoTSharp.Cicada
             {
                 try
                 {
-                    var Client = SdkClient.Create<IoTSharp.Sdk.InstallerClient>();
+                    var Client = SdkClient.Create<IoTSharp.Sdk.Http.InstallerClient>();
                     var fr = await Client.InstanceAsync();
                     this.Invoke((MethodInvoker)delegate
                     {

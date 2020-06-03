@@ -304,11 +304,11 @@ namespace IoTSharp.Cicada
             // 
             // attributeLatestBindingSource
             // 
-            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.AttributeLatest);
+            this.attributeLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.AttributeLatest);
             // 
             // telemetryLatestBindingSource
             // 
-            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.TelemetryLatest);
+            this.telemetryLatestBindingSource.DataSource = typeof(IoTSharp.Sdk.Http.TelemetryLatest);
             // 
             // timer1
             // 

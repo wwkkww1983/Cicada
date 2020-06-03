@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using System.Threading;
 using IoTSharp.Cicada.Models;
 using DevExpress.XtraBars.Ribbon;

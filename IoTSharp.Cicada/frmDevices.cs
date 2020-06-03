@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
-using IoTSharp.Sdk;
+using  IoTSharp.Sdk.Http;
 using System.Threading;
 using IoTSharp.Cicada.Models;
 
@@ -45,7 +45,7 @@ namespace IoTSharp.Cicada
             DoRefresh();
         }
 
-        private IoTSharp.Sdk.DevicesClient Client = null;
+        private  DevicesClient Client = null;
 
         public override Task Put(Device obj, CancellationToken token)
         {
